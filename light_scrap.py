@@ -29,6 +29,7 @@ def light_scrap(num):
             light_product_loca = light_data["list"][j]["location"]
             light_product_time_a = light_data["list"][j]["update_time"]
             light_product_time = datetime.timedelta(seconds = time.time() - float(light_product_time_a))
+            # category needed
             light_product_id = light_data["list"][j]["pid"]
             light_product_url = "https://m.bunjang.co.kr/products/" + light_product_id + "?q=%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C&ref=%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC"
         else:
