@@ -1,0 +1,461 @@
+categories: [
+{
+name: "유아동,완구",
+count: 142,
+list: [
+{
+categoryId: "HAE0003",
+name: "신생아,유아의류",
+count: 4
+},
+{
+categoryId: "HAE0011",
+name: "완구,인형",
+count: 2
+},
+{
+categoryId: "HAE0001",
+name: "임부복,출산용품",
+count: 1
+},
+{
+categoryId: "HAE0010",
+name: "유아동잡화",
+count: 10
+},
+{
+categoryId: "HAE0004",
+name: "유아동생활용품",
+count: 125
+}
+],
+categoryId: "HAE0000"
+},
+{
+name: "피규어,키덜트",
+count: 1,
+list: [
+{
+categoryId: "HAV0001",
+name: "피규어",
+count: 1
+}
+],
+categoryId: "HAV0000"
+},
+{
+name: "생활",
+count: 175,
+list: [
+{
+categoryId: "HAG0011",
+name: "기타 생활",
+count: 76
+},
+{
+categoryId: "HAG0001",
+name: "침구,커튼,카펫트",
+count: 6
+},
+{
+categoryId: "HAG0010",
+name: "원예,수예",
+count: 1
+},
+{
+categoryId: "HAG0004",
+name: "인테리어소품",
+count: 65
+},
+{
+categoryId: "HAG0005",
+name: "생활,수납용품",
+count: 8
+},
+{
+categoryId: "HAG0008",
+name: "욕실용품",
+count: 14
+},
+{
+categoryId: "HAG0006",
+name: "주방용품",
+count: 5
+}
+],
+categoryId: "HAG0000"
+},
+{
+name: "예술,미술",
+count: 1,
+list: [
+{
+categoryId: "HAS0004",
+name: "미술용품",
+count: 1
+}
+],
+categoryId: "HAS0000"
+},
+{
+name: "음향기기,악기",
+count: 4,
+list: [
+{
+categoryId: "HAM0006",
+name: "스피커,오디오",
+count: 1
+},
+{
+categoryId: "HAM0012",
+name: "피아노,건반악기",
+count: 3
+}
+],
+categoryId: "HAM0000"
+},
+{
+name: "뷰티",
+count: 5,
+list: [
+{
+categoryId: "HAD0007",
+name: "기타 뷰티",
+count: 5
+}
+],
+categoryId: "HAD0000"
+},
+{
+name: "핸드메이드",
+count: 1,
+list: [
+{
+categoryId: "HBA0001",
+name: "수제패션,소품",
+count: 1
+}
+],
+categoryId: "HBA0000"
+},
+{
+name: "포장식품",
+count: 1,
+list: [
+{
+categoryId: "HAU0001",
+name: "건강기능식품",
+count: 1
+}
+],
+categoryId: "HAU0000"
+},
+{
+name: "남성의류",
+count: 1,
+list: [
+{
+categoryId: "HAB0001",
+name: "남성티셔츠",
+count: 1
+}
+],
+categoryId: "HAB0000"
+},
+{
+name: "스포츠,레저",
+count: 511,
+list: [
+{
+categoryId: "HAO0005",
+name: "자전거",
+count: 1
+},
+{
+categoryId: "HAO0016",
+name: "캠핑",
+count: 447
+},
+{
+categoryId: "HAO0015",
+name: "기타 스포츠",
+count: 9
+},
+{
+categoryId: "HAO0002",
+name: "헬스,요가",
+count: 8
+},
+{
+categoryId: "HAO0013",
+name: "낚시",
+count: 43
+},
+{
+categoryId: "HAO0001",
+name: "등산",
+count: 3
+}
+],
+categoryId: "HAO0000"
+},
+{
+name: "여행,숙박",
+count: 2,
+list: [
+{
+categoryId: "HGA0007",
+name: "해외숙박",
+count: 1
+},
+{
+categoryId: "HGA0006",
+name: "펜션,캠핑,기타숙박",
+count: 1
+}
+],
+categoryId: "HGA0000"
+},
+{
+name: "재능,서비스",
+count: 2,
+list: [
+{
+categoryId: "HDA0006",
+name: "전문스킬,프리랜서",
+count: 2
+}
+],
+categoryId: "HDA0000"
+},
+{
+name: "가구",
+count: 1331,
+list: [
+{
+categoryId: "HAF0011",
+name: "기타 가구",
+count: 81
+},
+{
+categoryId: "HAF0001",
+name: "책상,책장",
+count: 109
+},
+{
+categoryId: "HAF0002",
+name: "의자",
+count: 968
+},
+{
+categoryId: "HAF0007",
+name: "거실가구",
+count: 83
+},
+{
+categoryId: "HAF0008",
+name: "주방가구",
+count: 70
+},
+{
+categoryId: "HAF0009",
+name: "수납가구",
+count: 12
+},
+{
+categoryId: "HAF0006",
+name: "침실가구",
+count: 8
+}
+],
+categoryId: "HAF0000"
+},
+{
+name: "반려동물용품",
+count: 5,
+list: [
+{
+categoryId: "HEB0099",
+name: "기타 반려동물용품",
+count: 2
+},
+{
+categoryId: "HEB0006",
+name: "고양이 패션,생활용품",
+count: 3
+}
+],
+categoryId: "HEB0000"
+},
+{
+name: "컴퓨터,주변기기",
+count: 10,
+list: [
+{
+categoryId: "HAI0004",
+name: "기타 기기,용품",
+count: 8
+},
+{
+categoryId: "HAI0003",
+name: "모니터",
+count: 1
+},
+{
+categoryId: "HAI0001",
+name: "데스크탑",
+count: 1
+}
+],
+categoryId: "HAI0000"
+},
+{
+name: "기타",
+count: 17,
+list: [
+{
+categoryId: "HZZ0001",
+name: "기타",
+count: 17
+}
+],
+categoryId: "HZZ0000"
+},
+{
+name: "디지털,가전",
+count: 404,
+list: [
+{
+categoryId: "HAH0002",
+name: "냉장고",
+count: 1
+},
+{
+categoryId: "HAH0004",
+name: "청소기",
+count: 2
+},
+{
+categoryId: "HAH0005",
+name: "주방조리가전",
+count: 2
+},
+{
+categoryId: "HAH0006",
+name: "건강,계절가전",
+count: 301
+},
+{
+categoryId: "HAH0008",
+name: "기타 디지털,가전",
+count: 98
+}
+],
+categoryId: "HAH0000"
+},
+{
+name: "게임",
+count: 3,
+list: [
+{
+categoryId: "HAN0008",
+name: "보드,퍼즐",
+count: 1
+},
+{
+categoryId: "HAN0009",
+name: "기타 게임관련",
+count: 1
+},
+{
+categoryId: "HAN0006",
+name: "PC게임",
+count: 1
+}
+],
+categoryId: "HAN0000"
+},
+{
+name: "신발,가방,잡화",
+count: 11,
+list: [
+{
+categoryId: "HAC0008",
+name: "기타 잡화",
+count: 6
+},
+{
+categoryId: "HAC0007",
+name: "시계,보석",
+count: 2
+},
+{
+categoryId: "HAC0005",
+name: "지갑,벨트",
+count: 2
+},
+{
+categoryId: "HAC0002",
+name: "남성신발",
+count: 1
+}
+],
+categoryId: "HAC0000"
+},
+{
+name: "골동품,희귀품",
+count: 19,
+list: [
+{
+categoryId: "HAT0002",
+name: "희귀품",
+count: 10
+},
+{
+categoryId: "HAT0001",
+name: "골동품",
+count: 9
+}
+],
+categoryId: "HAT0000"
+},
+{
+name: "자동차용품",
+count: 13,
+list: [
+{
+categoryId: "HAR0014",
+name: "실내부품,용품",
+count: 6
+},
+{
+categoryId: "HAR0017",
+name: "기타 자동차용품",
+count: 6
+},
+{
+categoryId: "HAR0016",
+name: "세차,청소용품",
+count: 1
+}
+],
+categoryId: "HAR0000"
+},
+{
+name: "도서",
+count: 10,
+list: [
+{
+categoryId: "HAP0002",
+name: "일반도서",
+count: 9
+},
+{
+categoryId: "HAP0012",
+name: "기타 도서",
+count: 1
+}
+],
+categoryId: "HAP0000"
+}
+]

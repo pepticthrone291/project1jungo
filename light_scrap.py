@@ -31,11 +31,20 @@ def light_scrap(num):
             light_product_time = datetime.timedelta(seconds = time.time() - float(light_product_time_a))
             # category needed
             light_product_id = light_data["list"][j]["pid"]
+            light_product_detail_url = "https://api.bunjang.co.kr/api/1/product/" + light_product_id + "/detail_info.json?version=4"
+            light_detail_res = req.get(light_product_detail_url, headers = headers)
+            
+            light_detail_soup = BS(light_detail_res.text, "html.parser")
+            light_detail_json_text = light_detail_soup.text
+            light_detail_data = json.loads(light_detail_json_text)
+
+            light_product_category = light_detail_data["item_info"]["category_id"]
+            
             light_product_url = "https://m.bunjang.co.kr/products/" + light_product_id + "?q=%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C&ref=%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC"
         else:
             continue
 
-        print(light_product_image, light_product_title, light_product_price, light_product_loca, light_product_time, light_product_url)
+        print(light_product_image, light_product_title, light_product_price, light_product_loca, light_product_time, light_product_category, light_product_url)
 
     print("<end of page " + str(num) + ">")
 

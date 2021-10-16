@@ -1,0 +1,807 @@
+categories: [
+{
+id: "900",
+count: 96,
+title: "도서/티켓/문구",
+order: 14,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_book.png",
+categories: [
+{
+id: "900500",
+count: 95,
+title: "문구",
+order: 1402,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_book.png",
+categories: [
+{
+id: "900500200",
+count: 95,
+title: "학습도구/문구/필기류",
+order: 140201,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_book.png"
+}
+]
+},
+{
+id: "900100",
+count: 1,
+title: "도서",
+order: 1401,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_book.png",
+categories: [
+{
+id: "900100004",
+count: 1,
+title: "학습/사전/참고서",
+order: 140105,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_book.png"
+}
+]
+}
+]
+},
+{
+id: "600",
+count: 90,
+title: "디지털/가전",
+order: 7,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600100",
+count: 67,
+title: "PC/노트북",
+order: 704,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600100005",
+count: 63,
+title: "PC주변기기(키보드/마우스)",
+order: 70404,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600100001",
+count: 2,
+title: "노트북/넷북",
+order: 70402,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600100004",
+count: 1,
+title: "노트북 가방/액세서리",
+order: 70405,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600100999",
+count: 1,
+title: "기타(PC/노트북)",
+order: 70406,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+}
+]
+},
+{
+id: "600700",
+count: 16,
+title: "모바일",
+order: 701,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600700004",
+count: 9,
+title: "태블릿",
+order: 70102,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600700007",
+count: 4,
+title: "케이블/충전기/주변기기",
+order: 70106,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600700001",
+count: 1,
+title: "스마트폰",
+order: 70101,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600700003",
+count: 1,
+title: "케이스/보호필름/액세서리",
+order: 70105,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600700999",
+count: 1,
+title: "기타(모바일)",
+order: 70107,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+}
+]
+},
+{
+id: "600400",
+count: 4,
+title: "가전제품",
+order: 702,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600400999",
+count: 3,
+title: "기타(가전제품)",
+order: 70206,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+},
+{
+id: "600400002",
+count: 1,
+title: "대형가전(냉장고/세탁기 등)",
+order: 70202,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+}
+]
+},
+{
+id: "600500",
+count: 1,
+title: "오디오/영상/관련기기",
+order: 703,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600500999",
+count: 1,
+title: "기타(오디오/영상/관련기기)",
+order: 70306,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+}
+]
+},
+{
+id: "600200",
+count: 1,
+title: "PC부품/저장장치",
+order: 707,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png",
+categories: [
+{
+id: "600200003",
+count: 1,
+title: "CPU/메인보드",
+order: 70702,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_digital.png"
+}
+]
+}
+]
+},
+{
+id: "810",
+count: 37,
+title: "가구/인테리어",
+order: 16,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_furniture.png",
+categories: [
+{
+id: "810100",
+count: 24,
+title: "가구",
+order: 1602,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_furniture.png",
+categories: [
+{
+id: "810100300",
+count: 22,
+title: "사무용가구",
+order: 160204,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_furniture.png"
+},
+{
+id: "810100100",
+count: 1,
+title: "거실가구",
+order: 160202,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_furniture.png"
+},
+{
+id: "810100400",
+count: 1,
+title: "침구",
+order: 160203,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_furniture.png"
+}
+]
+},
+{
+id: "810200",
+count: 13,
+title: "인테리어",
+order: 1601,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_interior.png",
+categories: [
+{
+id: "810200300",
+count: 10,
+title: "소품",
+order: 160101,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_interior.png"
+},
+{
+id: "810200100",
+count: 3,
+title: "꽃/원예",
+order: 160102,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_interior.png"
+}
+]
+}
+]
+},
+{
+id: "700",
+count: 30,
+title: "스포츠/레저",
+order: 8,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_sports.png",
+categories: [
+{
+id: "700500",
+count: 15,
+title: "인라인/스케이트보드",
+order: 806,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_skate-board.png"
+},
+{
+id: "700400",
+count: 7,
+title: "전동킥보드/전동휠",
+order: 807,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_elec-board.png"
+},
+{
+id: "700900",
+count: 7,
+title: "겨울 스포츠",
+order: 817,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_winter-sports.png",
+categories: [
+{
+id: "700900400",
+count: 4,
+title: "스노우보드 장비",
+order: 81702,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_winter-sports.png"
+},
+{
+id: "700900300",
+count: 3,
+title: "스키/보드 의류 및 잡화",
+order: 81701,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_winter-sports.png"
+}
+]
+},
+{
+id: "700350",
+count: 1,
+title: "자전거",
+order: 805,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bicycle.png",
+categories: [
+{
+id: "700350900",
+count: 1,
+title: "자전거 의류 및 액세서리",
+order: 80501,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bicycle.png"
+}
+]
+}
+]
+},
+{
+id: "990",
+count: 21,
+title: "예술/희귀/수집품",
+order: 12,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_art.png",
+categories: [
+{
+id: "990100",
+count: 21,
+title: "희귀/수집품",
+order: 1201,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_art.png"
+}
+]
+},
+{
+id: "999",
+count: 13,
+title: "기타",
+order: 20,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_etc.png"
+},
+{
+id: "930",
+count: 11,
+title: "키덜트",
+order: 11,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kidult.png",
+categories: [
+{
+id: "930999",
+count: 6,
+title: "기타(키덜트)",
+order: 1107,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kidult.png"
+},
+{
+id: "930400",
+count: 3,
+title: "보드게임",
+order: 1105,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_board-game.png"
+},
+{
+id: "930100",
+count: 1,
+title: "피규어/인형",
+order: 1101,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_doll.png"
+}
+]
+},
+{
+id: "405",
+count: 10,
+title: "신발",
+order: 3,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_shoes.png",
+categories: [
+{
+id: "405100",
+count: 8,
+title: "스니커즈",
+order: 301,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_sneakers.png"
+},
+{
+id: "405300",
+count: 2,
+title: "남성화",
+order: 302,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_shoes.png",
+categories: [
+{
+id: "405300999",
+count: 2,
+title: "기타(남성화)",
+order: 30204,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_shoes.png"
+}
+]
+}
+]
+},
+{
+id: "800",
+count: 10,
+title: "생활/가공식품",
+order: 17,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_life.png",
+categories: [
+{
+id: "800100",
+count: 9,
+title: "생활용품",
+order: 1702,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_life.png",
+categories: [
+{
+id: "800100999",
+count: 9,
+title: "기타(생활용품)",
+order: 170204,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_life.png"
+}
+]
+},
+{
+id: "800400",
+count: 1,
+title: "주방용품",
+order: 1701,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_life.png",
+categories: [
+{
+id: "800400050",
+count: 1,
+title: "그릇/홈세트",
+order: 170104,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_life.png"
+}
+]
+}
+]
+},
+{
+id: "500",
+count: 10,
+title: "유아동/출산",
+order: 18,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png",
+categories: [
+{
+id: "500119",
+count: 8,
+title: "교육/완구/인형",
+order: 1807,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png",
+categories: [
+{
+id: "500119002",
+count: 7,
+title: "교육완구",
+order: 180702,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png"
+},
+{
+id: "500119010",
+count: 1,
+title: "기타",
+order: 180710,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png"
+}
+]
+},
+{
+id: "500116",
+count: 1,
+title: "유아동신발/잡화",
+order: 1806,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png",
+categories: [
+{
+id: "500116002",
+count: 1,
+title: "가방",
+order: 180602,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png",
+need_size_tag: 1
+}
+]
+},
+{
+id: "500117",
+count: 1,
+title: "유아동용품",
+order: 1808,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png",
+categories: [
+{
+id: "500117005",
+count: 1,
+title: "가구/침대/매트",
+order: 180806,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_kid.png"
+}
+]
+}
+]
+},
+{
+id: "320",
+count: 7,
+title: "남성의류",
+order: 2,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+categories: [
+{
+id: "320210",
+count: 2,
+title: "티셔츠",
+order: 205,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+categories: [
+{
+id: "320210100",
+count: 2,
+title: "반팔 티셔츠",
+order: 20502,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png"
+}
+]
+},
+{
+id: "320130",
+count: 2,
+title: "반바지",
+order: 211,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+categories: [
+{
+id: "320130300",
+count: 2,
+title: "밴딩/스포츠",
+order: 21103,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+need_size_tag: 1
+}
+]
+},
+{
+id: "320200",
+count: 1,
+title: "맨투맨",
+order: 203,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png"
+},
+{
+id: "320190",
+count: 1,
+title: "후드티/후드집업",
+order: 204,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png"
+},
+{
+id: "320040",
+count: 1,
+title: "셔츠",
+order: 206,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+categories: [
+{
+id: "320040999",
+count: 1,
+title: "기타(셔츠)",
+order: 20605,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_men-clothes.png",
+need_size_tag: 1
+}
+]
+}
+]
+},
+{
+id: "910",
+count: 4,
+title: "스타굿즈",
+order: 10,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_star-goods.png",
+categories: [
+{
+id: "910100",
+count: 3,
+title: "보이그룹",
+order: 1001,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_star-goods.png",
+categories: [
+{
+id: "910100007",
+count: 3,
+title: "기타(보이그룹)",
+order: 100107,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_star-goods.png"
+}
+]
+},
+{
+id: "910500",
+count: 1,
+title: "솔로(남)",
+order: 1003,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_star-goods.png",
+categories: [
+{
+id: "910500007",
+count: 1,
+title: "기타(솔로-남)",
+order: 100307,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_star-goods.png"
+}
+]
+}
+]
+},
+{
+id: "310",
+count: 3,
+title: "여성의류",
+order: 1,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-clothes.png",
+categories: [
+{
+id: "310090",
+count: 1,
+title: "패딩/점퍼",
+order: 101,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-jumper.png",
+categories: [
+{
+id: "310090999",
+count: 1,
+title: "기타(패딩/점퍼)",
+order: 10104,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-jumper.png",
+need_size_tag: 1
+}
+]
+},
+{
+id: "310050",
+count: 1,
+title: "셔츠",
+order: 107,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-clothes.png",
+categories: [
+{
+id: "310050030",
+count: 1,
+title: "체크 셔츠",
+order: 10703,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-clothes.png",
+need_size_tag: 1
+}
+]
+},
+{
+id: "310140",
+count: 1,
+title: "청바지",
+order: 109,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-clothes.png",
+categories: [
+{
+id: "310140020",
+count: 1,
+title: "일자 청바지",
+order: 10901,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_women-clothes.png",
+need_size_tag: 1
+}
+]
+}
+]
+},
+{
+id: "400",
+count: 3,
+title: "패션 액세서리",
+order: 6,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_fashion.png",
+categories: [
+{
+id: "400060",
+count: 1,
+title: "지갑 ",
+order: 601,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_fashion.png",
+categories: [
+{
+id: "400060999",
+count: 1,
+title: "기타(지갑)",
+order: 60103,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_fashion.png"
+}
+]
+},
+{
+id: "400070",
+count: 1,
+title: "모자",
+order: 603,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_fashion.png",
+categories: [
+{
+id: "400070500",
+count: 1,
+title: "비니",
+order: 60304,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_fashion.png"
+}
+]
+}
+]
+},
+{
+id: "430",
+count: 2,
+title: "가방",
+order: 4,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bag.png",
+categories: [
+{
+id: "430200",
+count: 1,
+title: "남성가방",
+order: 402,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bag.png",
+categories: [
+{
+id: "430200400",
+count: 1,
+title: "백팩",
+order: 40205,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bag.png"
+}
+]
+},
+{
+id: "430300",
+count: 1,
+title: "여행용",
+order: 403,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bag.png",
+categories: [
+{
+id: "430300999",
+count: 1,
+title: "기타(여행용)",
+order: 40302,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_bag.png"
+}
+]
+}
+]
+},
+{
+id: "920",
+count: 2,
+title: "음반/악기",
+order: 13,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_music.png",
+categories: [
+{
+id: "920200",
+count: 2,
+title: "악기",
+order: 1302,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_play-music.png",
+categories: [
+{
+id: "920200500",
+count: 2,
+title: "건반악기",
+order: 130204,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_play-music.png"
+}
+]
+}
+]
+},
+{
+id: "200",
+count: 2,
+title: "번개나눔",
+order: 23,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_share.png",
+categories: [
+{
+id: "200100",
+count: 1,
+title: "물품 무료나눔",
+order: 2301,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_share.png"
+},
+{
+id: "200300",
+count: 1,
+title: "덤(조건부나눔)",
+order: 2302,
+icon_url: "https://static.bunjang.co.kr/category_icons/ic_category_share.png"
+}
+]
+}
+],
