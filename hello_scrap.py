@@ -25,8 +25,9 @@ def hello_scrap(num):
         if hello_data["list"][i].get("type") == "item":
             hello_product_image = hello_data["list"][i]["item"]["media"]["imageUrl"]
             hello_product_title = hello_data["list"][i]["item"]["title"]
-            hello_product_price = hello_data["list"][i]["item"]["property"]["price"]["text"]
+            hello_product_price = hello_data["list"][i]["item"]["property"]["price"]["amount"]
             hello_product_loca = hello_data["list"][i]["item"]["property"].get("location")
+            hello_product_time = hello_data["list"][i]["item"]["timeago"]
             hello_product_category = hello_data["list"][i]["item"]["categoryId"]
             hello_product_id = hello_data["list"][i]["item"]["itemIdx"]
             hello_product_url = "https://www.hellomarket.com/item/" + str(hello_product_id) + "?viewPath=search_list&clickPath=search"
@@ -37,7 +38,7 @@ def hello_scrap(num):
         else:
             continue
         
-        print(hello_product_image, hello_product_title, hello_product_price, hello_product_loca, hello_product_category, hello_product_url)
+        print(hello_product_image, hello_product_title, hello_product_price, hello_product_loca, hello_product_time, hello_product_category, hello_product_url)
 
 t1 = time.perf_counter()
 

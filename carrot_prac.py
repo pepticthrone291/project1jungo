@@ -64,5 +64,5 @@ def carrot_scrap(num):
 
 # print(f'Finished in {round(t2-t1, 2)} second(s)')
 
-
+carrot_scrap(1)
 
