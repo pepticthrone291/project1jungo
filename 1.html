@@ -1,26 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>중고유니버스 | 세상 모두의 중고</title>
-    <meta charset="UTF-8" />
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-    .title {
-      color : black;
-    }
-  </style>
-  </head>
-  <body>
-    <h1 class="title"><a href="1.html">중고 유니버스</a></h1>
-    <h5><a href="1.html">우주 모두의 중고를 한 곳에!</a></h5>
-    <input />
-    <div>
-      <label><input type="checkbox" />중고나라</label>
-      <label><input type="checkbox" />당근마켓</label>
-      <label><input type="checkbox" />헬로마켓</label>
-      <label><input type="checkbox" />번개장터</label>
-    </div>
-  </body>
+    <head>
+        <!-- 탭 title-->
+        <title>중고유니버스 | 우주 모두의 중고</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Comparing used products">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="IT Satgat">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!-- CSS-->
+        <style>
+            * {
+                text-align: center;
+            }
+
+            .wrap {
+                width: 900px;
+                margin: auto;
+            }
+
+            .main_title {
+                margin-top: 70px;
+                color: black;
+                font-size: 130px;
+                font-weight: bold;
+            }
+
+            .sub_title {
+                font-size: 30px;
+            }
+
+            .search_box {
+                margin-top: 50px;
+            }
+
+            .input_box {
+                width: 500px;
+                height: 40px;
+                font-size: 35px;
+            }
+
+            .filter_box {
+                margin-bottom: 100px;
+            }
+
+            .search_btn {
+                height: 40px;
+                display: inline-block;
+                position: absolute;
+                background-color: white;
+                border-style: wave;
+                border-color: white;
+            }
+
+        </style>
+
+        <!-- javascript -->
+        <script>
+            function openClose()
+
+        </script>
+    </head>
+    <body>
+        <!-- 전체 div -->
+        <div class="wrap">
+            <!-- 제목 / 부제목 div -->
+            <div>
+                <h1 class="main_title"><a href="1.html">중고 유니버스</a></h1>
+                <h5 class="sub_title">우주 모두의 중고를 한 곳에!</h5>
+            </div>
+            <!-- 검색창 / 버튼 div -->
+            <div class="search_box">
+                <input class="input_box">
+                <button type="button" class="search_btn">검색</button>
+            </div>
+            <!-- 검색필터 div -->
+            <div class="filter_box">
+                <button type="button" class="search_site_btn" onclick="openClose()">검색할 곳 선택</button>
+                <label><input type="checkbox"/>전체선택</label>
+                <label><input type="checkbox"/>중고나라</label>
+                <label><input type="checkbox"/>당근마켓</label>
+                <label><input type="checkbox"/>헬로마켓</label>
+                <label><input type="checkbox"/>번개장터</label>
+                <div>
+                    <button type="button" class="cheapest_btn">가장 싼 중고매물 찾기!</button>
+                    <button type="button" class="latest_btn">가장 최신 중고매물 찾기!</button>
+                    <button type="button" class="closest_btn">가장 가까운 중고매물 찾기!</button>
+                </div>
+            </div>
+            <!-- 검색결과 카드 div -->
+            <div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
 
