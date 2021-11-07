@@ -6,12 +6,9 @@ result = 0
 
 
 def carrot_scrap(num):
-    carrot_main_url = "https://www.daangn.com"
-    carrot_url = carrot_main_url + \
-        "/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C/more/flea_market?page=" + \
-        str(num)
+    carrot_url_head = "https://www.daangn.com"
+    carrot_url = f"{carrot_url_head}/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C/more/flea_market?page={str(num)}"
     carrot_res = req.get(carrot_url)
-
     carrot_soup = BS(carrot_res.text, "html.parser")
     carrot_data = carrot_soup.select("article")
 
@@ -30,7 +27,7 @@ def carrot_scrap(num):
                 "a > div.article-info > p.article-region-name").text
             carrot_product_url_tail = carrot_datum.select_one("a")["href"]
             # ProductPageLink Scraping
-            carrot_product_url = carrot_main_url + carrot_product_url_tail
+            carrot_product_url = carrot_url_head + carrot_product_url_tail
             carrot_product_res = req.get(carrot_product_url)
             carrot_product_soup = BS(carrot_product_res.text, "html.parser")
             carrot_product_time = carrot_product_soup.select_one(
@@ -72,5 +69,7 @@ def carrot_scrap(num):
 # t2 = time.perf_counter()
 
 # print(f'Finished in {round(t2-t1, 2)} second(s)')
-
+t1 = time.perf_counter()
 carrot_scrap(1)
+t2 = time.perf_counter()
+print(f'Finished in {round(t2-t1, 2)} second(s)')
