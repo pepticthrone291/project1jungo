@@ -82,6 +82,35 @@
                 margin-top: 60px;
             }
 
+            /* button과 밑에 서치사이트 버튼 속성은 같음. 나중에 같은 것으로 수정요.*/
+            button {
+                transition:all 1s;
+            }
+
+            .search_site_btn {
+                list-style-position:inside;
+                border: 2px solid transparent;
+                padding : 1px;
+                display: inline;
+                font-size: 20px;
+                padding-inline: 35px;
+                transition:all 1s;
+            }
+
+
+            
+            /*hover 효과*/
+            button:hover{
+                background-color: #90d5ed;
+                opacity: 0.7;
+            }
+
+            .search_site_btn:hover {
+                background-color: #90d5ed;
+                opacity: 0.7;
+            }
+
+
             /*화면 너비가 800px 이하가 될 경우 변화*/
             @media(max-width:800px) {
                 .sub_title {
@@ -104,10 +133,10 @@
             function openClose() {
                     if ($(".choose_site").css("display") == "block") {
                         $(".choose_site").hide();
-                        $(".search_site_btn").text("검색할 사이트 선택");
+                        $(".search_site_btn").text("검색할 사이트");
                     } else {
                         $(".choose_site").show();
-                        $(".search_site_btn").text("검색할 사이트 선택 완료");
+                        $(".search_site_btn").text("검색할 사이트");
                     }
 
                 }
@@ -129,7 +158,12 @@
             </div>
             <!-- 검색필터 div -->
             <div class="filter_box">
-                <button type="button" class="search_site_btn" onclick="openClose()">검색할 곳 선택</button>
+                <ul type="button" class="search_site_btn" onclick="openClose()">검색할 사이트</ul>
+                    <li for="all"><input type="checkbox" id="all"/>전체선택</li>
+                    <li for="jg"><input type="checkbox" id="jg"/>중고나라</li>
+                    <li for="carrot"><input type="checkbox" id="carrot"/>당근마켓</li>
+                    <li for="hello"><input type="checkbox" id="hello"/>헬로마켓</li>
+                    <li for="thunder"><input type="checkbox" id="thunder"/>번개장터</li>
                 <span class="choose_filter">
                     <button type="button" class="cheapest_btn">최저가 검색</button>
                     <button type="button" class="latest_btn">최신순 검색</button>
@@ -137,13 +171,9 @@
                 </span>
             </div>
                     <!-- 검색할 사이트 목록-->
-            <div class="choose_site">
-                <label><input type="checkbox"/>전체선택</label>
-                <label><input type="checkbox"/>중고나라</label>
-                <label><input type="checkbox"/>당근마켓</label>
-                <label><input type="checkbox"/>헬로마켓</label>
-                <label><input type="checkbox"/>번개장터</label>
-            </div>
+            <ul class="choose_site">
+                
+            </ul>
 
             <!-- 검색결과 카드 div -->
             <div class = "card_sector">
