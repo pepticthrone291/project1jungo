@@ -1,16 +1,18 @@
 from bs4 import BeautifulSoup as BS
 import requests as req
-import time
+from flask import jsonify
 
 result = 0
 
 
-def carrot_scrap(num):
+def carrot_scrap(carrot_search_word, num):
     carrot_url_head = "https://www.daangn.com"
-    carrot_url = f"{carrot_url_head}/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C/more/flea_market?page={str(num)}"
+    carrot_url = f"{carrot_url_head}/search/{carrot_search_word}/more/flea_market?page={str(num)}"
     carrot_res = req.get(carrot_url)
     carrot_soup = BS(carrot_res.text, "html.parser")
     carrot_data = carrot_soup.select("article")
+
+    cards = []
 
     if len(carrot_data) <= 1:
         global result
@@ -35,8 +37,12 @@ def carrot_scrap(num):
             carrot_product_category = carrot_product_soup.select_one(
                 "#article-category > time").previous_sibling.text
 
-            print(carrot_product_image, carrot_product_title, carrot_product_price,
-                  carrot_product_loca,  carrot_product_url, carrot_product_category, carrot_product_time)
+            card = {'url': carrot_product_url, 'title': carrot_product_title,
+                    'image': carrot_product_image, 'price': carrot_product_price, 'location': carrot_product_loca, 'time': carrot_product_time, 'category': carrot_product_category}
+            cards.append(card)
+    return cards
+
+    # print(cards)
 
     # if len(carrot_data) <= 1:
     #     global result
@@ -69,7 +75,4 @@ def carrot_scrap(num):
 # t2 = time.perf_counter()
 
 # print(f'Finished in {round(t2-t1, 2)} second(s)')
-t1 = time.perf_counter()
-carrot_scrap(1)
-t2 = time.perf_counter()
-print(f'Finished in {round(t2-t1, 2)} second(s)')
+print(carrot_scrap("아이패드", 1))
