@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup as BS
 import requests as req
-from flask import jsonify
-
-result = 0
 
 
-def carrot_scrap(carrot_search_word, num):
+carrot_result = 0
+
+
+def carrot_scrap(word, num):
     carrot_url_head = "https://www.daangn.com"
-    carrot_url = f"{carrot_url_head}/search/{carrot_search_word}/more/flea_market?page={str(num)}"
+    carrot_url = f"{carrot_url_head}/search/{word}/more/flea_market?page={str(num)}"
     carrot_res = req.get(carrot_url)
     carrot_soup = BS(carrot_res.text, "html.parser")
     carrot_data = carrot_soup.select("article")
@@ -15,8 +15,8 @@ def carrot_scrap(carrot_search_word, num):
     cards = []
 
     if len(carrot_data) <= 1:
-        global result
-        result = 1
+        global carrot_result
+        carrot_result = 1
     else:
         for carrot_datum in carrot_data:
             carrot_product_image = carrot_datum.select_one(
@@ -42,18 +42,18 @@ def carrot_scrap(carrot_search_word, num):
             cards.append(card)
     return cards
 
-    # print(cards)
+# print(cards)
 
-    # if len(carrot_data) <= 1:
-    #     global result
-    #     result = 1
-    # else:
-    #     for carrot_datum in carrot_data:
-    #         product_image_carrot = carrot_datum.select_one("a > div.card-photo > img")
-    #         product_title_carrot = carrot_datum.select_one("a > div.article-info > div > span.article-title").text
-    #         product_price_carrot = carrot_datum.select_one("a > div.article-info > p.article-price").text
-    #         product_loca_carrot = carrot_datum.select_one("a > div.article-info > p.article-region-name").text
-    #         print(product_image_carrot, product_title_carrot, product_price_carrot, product_loca_carrot)
+# if len(carrot_data) <= 1:
+#     global result
+#     result = 1
+# else:
+#     for carrot_datum in carrot_data:
+#         product_image_carrot = carrot_datum.select_one("a > div.card-photo > img")
+#         product_title_carrot = carrot_datum.select_one("a > div.article-info > div > span.article-title").text
+#         product_price_carrot = carrot_datum.select_one("a > div.article-info > p.article-price").text
+#         product_loca_carrot = carrot_datum.select_one("a > div.article-info > p.article-region-name").text
+#         print(product_image_carrot, product_title_carrot, product_price_carrot, product_loca_carrot)
 
 
 # t1 = time.perf_counter()
@@ -75,4 +75,3 @@ def carrot_scrap(carrot_search_word, num):
 # t2 = time.perf_counter()
 
 # print(f'Finished in {round(t2-t1, 2)} second(s)')
-print(carrot_scrap("아이패드", 1))

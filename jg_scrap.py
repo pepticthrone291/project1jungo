@@ -41,9 +41,6 @@ while 1:
     print(num)
     num += 1
 
-t2 = time.perf_counter()
-
-print(f'Finished in {round(t2-t1, 2)} second(s)')
 # k = 0
 
 # while 1:
