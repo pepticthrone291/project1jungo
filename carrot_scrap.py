@@ -74,4 +74,5 @@ def carrot_scrap(word, num):
 #     thread.join()
 # t2 = time.perf_counter()
 
-# print(f'Finished in {round(t2-t1, 2)} second(s)')
+# print(f'Finished in {round(t2-t1, 2)} second(s)'
+print(carrot_scrap("아이패드", 1))

@@ -22,7 +22,7 @@ def report():
         if existingItems:
             items = existingItems
         else:
-            items = carrot_scrap(word, 1).append(light_scrap(word, 1))
+            items = light_scrap(word, 1)
             db[word] = items
     else:
         return redirect("/")

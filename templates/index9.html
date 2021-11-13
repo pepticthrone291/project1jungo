@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Nomad News | {{order.capitalize()}} </title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <header>
+    <h1>Nomad News</h1>
+    <form action="/" method="get">
+      <div>
+        Order by: 
+        <button name="order_by" value="popular">Popular</button>
+          | 
+        <button name="order_by" value="new">New</button>
+      </div>
+    </form>
+  </header>
+  <main>
+    {% for story in stories %}
+    <div>
+      <div>
+        <a href="/{{story.id}}">
+          <h3>{{story.title}}</h3>
+        </a>
+         (
+        <a href="{{story.link}}" target=_blank>{{story.link}}</a>
+        ) 
+      </div>
+      <div>{{story.points}} points | By: {{story.author}} | {{story.comments}} comments</div>
+    </div>
+    <hr>
+    {% endfor %}
+  </main>
+</body>
+
+</html>

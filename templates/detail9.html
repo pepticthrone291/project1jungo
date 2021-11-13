@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nomad News | {{coms[1].title}}</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <header>
+    <h1>{{coms[1].title}}</h1>
+    <div>
+      {{coms[3].points}} points | By {{coms[0].author_art}} | <a href="{{coms[2].url}}" target="_blank">{{coms[2].url}}</a>
+    </div>
+  </header>
+  <main>
+    {% for com in coms[4:] %}
+    <div>
+        <strong>{{com.author}}</strong>
+        {{com.text|safe}}
+    </div>
+    <hr>
+    {% endfor %}
+  </main>
+</body>
+
+</html>
