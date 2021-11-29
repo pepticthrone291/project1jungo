@@ -5,7 +5,6 @@ import time
 # jg_result = 0
 num = 0
 # def jg_scrap(num):
-t1 = time.perf_counter()
 
 while 1:
     current_time = time.strftime('%Y-%m-%d %X')

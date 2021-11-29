@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Result | Jungo Cloud</title>
+    <style>
+      section {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>{{resultsNumber}} results for {{word}}</h2>
+    <section>
+      <h4>Title</h4>
+      <h4>Price</h4>
+      <h4>Time</h4>
+      {% for product in products %}
+      <span><a href="{{product.url}}">{{product.title}}</a></span>
+      <span>{{product.price}}</span>
+      <span>{{product.time}}</span>
+      {% endfor %}
+    </section>
+  </body>
+</html>

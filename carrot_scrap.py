@@ -5,45 +5,50 @@ import requests as req
 carrot_result = 0
 
 
-def carrot_scrap(word, num):
-    carrot_url_head = "https://www.daangn.com"
-    carrot_url = f"{carrot_url_head}/search/{word}/more/flea_market?page={str(num)}"
-    carrot_res = req.get(carrot_url)
-    carrot_soup = BS(carrot_res.text, "html.parser")
-    carrot_data = carrot_soup.select("article")
-
+def carrot(word):
     cards = []
-
-    if len(carrot_data) <= 1:
+    num = 0
+    while True:
         global carrot_result
-        carrot_result = 1
-    else:
-        for carrot_datum in carrot_data:
-            carrot_product_image = carrot_datum.select_one(
-                "a > div.card-photo > img")
-            carrot_product_title = carrot_datum.select_one(
-                "a > div.article-info > div > span.article-title").text
-            carrot_product_price = carrot_datum.select_one(
-                "a > div.article-info > p.article-price").text
-            carrot_product_loca = carrot_datum.select_one(
-                "a > div.article-info > p.article-region-name").text
-            carrot_product_url_tail = carrot_datum.select_one("a")["href"]
-            # ProductPageLink Scraping
-            carrot_product_url = carrot_url_head + carrot_product_url_tail
-            carrot_product_res = req.get(carrot_product_url)
-            carrot_product_soup = BS(carrot_product_res.text, "html.parser")
-            carrot_product_time = carrot_product_soup.select_one(
-                "#article-category > time").text
-            carrot_product_category = carrot_product_soup.select_one(
-                "#article-category > time").previous_sibling.text
+        if carrot_result == 1:
+            break
 
-            card = {'url': carrot_product_url, 'title': carrot_product_title,
-                    'image': carrot_product_image, 'price': carrot_product_price, 'location': carrot_product_loca, 'time': carrot_product_time, 'category': carrot_product_category}
-            cards.append(card)
+        carrot_url_head = "https://www.daangn.com"
+        carrot_url = f"{carrot_url_head}/search/{word}/more/flea_market?page={str(num)}"
+        carrot_res = req.get(carrot_url)
+        carrot_soup = BS(carrot_res.text, "html.parser")
+        carrot_data = carrot_soup.select("article")
+
+        if len(carrot_data) <= 1:
+            carrot_result = 1
+        else:
+            for carrot_datum in carrot_data:
+                carrot_product_image = carrot_datum.select_one(
+                    "a > div.card-photo > img")
+                carrot_product_title = carrot_datum.select_one(
+                    "a > div.article-info > div > span.article-title").text
+                carrot_product_price = carrot_datum.select_one(
+                    "a > div.article-info > p.article-price").text.strip()
+                carrot_product_loca = carrot_datum.select_one(
+                    "a > div.article-info > p.article-region-name").text.strip()
+                carrot_product_url_tail = carrot_datum.select_one("a")["href"]
+                carrot_product_url = carrot_url_head + carrot_product_url_tail
+                carrot_product_res = req.get(carrot_product_url)
+                carrot_product_soup = BS(
+                    carrot_product_res.text, "html.parser")
+                carrot_product_time = carrot_product_soup.select_one(
+                    "#article-category > time").text.strip()
+                carrot_product_category = carrot_product_soup.select_one(
+                    "#article-category > time").previous_sibling.text.strip()
+
+                card = {'url': carrot_product_url, 'title': carrot_product_title,
+                        'image': carrot_product_image, 'price': carrot_product_price, 'location': carrot_product_loca, 'time': carrot_product_time, 'category': carrot_product_category}
+                cards.append(card)
+                print(card)
+        num += 1
     return cards
 
 # print(cards)
-
 # if len(carrot_data) <= 1:
 #     global result
 #     result = 1
@@ -75,4 +80,4 @@ def carrot_scrap(word, num):
 # t2 = time.perf_counter()
 
 # print(f'Finished in {round(t2-t1, 2)} second(s)'
-print(carrot_scrap("아이패드", 1))
+carrot("화이트보드")

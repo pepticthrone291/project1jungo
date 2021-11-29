@@ -1,55 +1,56 @@
 import requests as req
 from bs4 import BeautifulSoup as BS
+import time
 import json
 
 
-hello_result = 0
-
-
-def hello_scrap(word, num):
-    hello_url = f"https://www.hellomarket.com/api/search/items?q={word}page=" + \
-        str(num)
+def extract_page(word):
+    turtle = str(time.time()).replace('.', '').strip()[0:13]
+    hello_url = f"https://www.hellomarket.com/api/search/items?q={word}&page=1&startTime={turtle}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}
     hello_res = req.get(hello_url, headers=headers)
-    hello_soup = BS(hello_res.text, "lxml")
+    hello_soup = BS(hello_res.text, "html.parser")
     hello_json_txt = hello_soup.text
     hello_data = json.loads(hello_json_txt)
 
+    total_count = hello_data["result"]["totalCount"]
+    max_page = int(total_count)//30 + 1
+    return max_page
+
+
+def hello(word):
+    turtle = str(time.time()).replace('.', '').strip()[0:13]
     cards = []
+    for i in range(extract_page(word)):
+        hello_url = f"https://www.hellomarket.com/api/search/items?q={word}&page={i+1}&startTime={turtle}"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}
+        hello_res = req.get(hello_url, headers=headers)
+        hello_soup = BS(hello_res.text, "lxml")
+        hello_json_txt = hello_soup.text
+        hello_data = json.loads(hello_json_txt)
 
-    if len(hello_data["list"]) <= 1:
-        global hello_result
-        hello_result = 1
+        for j in range(0, len(hello_data["list"])):
+            if hello_data["list"][j].get("type") == "item":
+                hello_product_image = hello_data["list"][j]["item"]["media"]["imageUrl"]
+                hello_product_title = hello_data["list"][j]["item"]["title"]
+                hello_product_price = hello_data["list"][j]["item"]["property"]["price"]["amount"]
+                hello_product_loca = hello_data["list"][j]["item"]["property"].get(
+                    "location")
+                hello_product_time = hello_data["list"][j]["item"]["timeago"]
+                hello_product_category = hello_data["list"][j]["item"]["categoryId"]
+                hello_product_id = hello_data["list"][j]["item"]["itemIdx"]
+                hello_product_url = "https://www.hellomarket.com/item/" + \
+                    str(hello_product_id) + \
+                    "?viewPath=search_list&clickPath=search"
+            else:
+                continue
 
-    for i in range(0, len(hello_data["list"])):
-        if hello_data["list"][i].get("type") == "item":
-            hello_product_image = hello_data["list"][i]["item"]["media"]["imageUrl"]
-            hello_product_title = hello_data["list"][i]["item"]["title"]
-            hello_product_price = hello_data["list"][i]["item"]["property"]["price"]["amount"]
-            hello_product_loca = hello_data["list"][i]["item"]["property"].get(
-                "location")
-            hello_product_time = hello_data["list"][i]["item"]["timeago"]
-            hello_product_category = hello_data["list"][i]["item"]["categoryId"]
-            hello_product_id = hello_data["list"][i]["item"]["itemIdx"]
-            hello_product_url = "https://www.hellomarket.com/item/" + \
-                str(hello_product_id) + "?viewPath=search_list&clickPath=search"
-
-            # no location in hellomarket products mostly
-            # time
-
-        else:
-            continue
-
-        card = {'url': hello_product_url, 'title': hello_product_title, 'image': hello_product_image,  'price': hello_product_price,
-                'location': hello_product_loca, 'time': hello_product_time, 'category': hello_product_category}
-        cards.append(card)
+            card = {'url': hello_product_url, 'title': hello_product_title, 'image': hello_product_image,  'price': hello_product_price,
+                    'location': hello_product_loca, 'time': hello_product_time, 'category': hello_product_category}
+            cards.append(card)
     return cards
-
-
-for i in range(5):
-    print(hello_scrap("아이패드", i))
-# t1 = time.perf_counter()
 
 # threads = []
 # j = 0
@@ -72,6 +73,7 @@ for i in range(5):
 # product_title_hello = data_hello["list"][0]["item"]["title"]
 # print(product_title_hello)
 
+
 #     if len(data_hello) <= 1:
 #         global result
 #         result = 0
@@ -81,3 +83,4 @@ for i in range(5):
 #             product_title_hello = data_hello["list"][i]["title"]
 #             product_price_hello = data_hello["list"][i]["property"]["price"]["text"]
 #             print(product_image_hello, product_title_hello, product_price_hello)
+print(hello("화이트보드"))
