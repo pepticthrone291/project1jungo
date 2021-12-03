@@ -31,27 +31,13 @@ def light_page(d, word, num):
             light_product_title = light_data["list"][j]["name"]
             light_product_price = light_data["list"][j]["price"]
             light_product_loca = light_data["list"][j]["location"]
-            light_product_time_a = light_data["list"][j]["update_time"]
-            light_product_time = datetime.timedelta(
-                seconds=time.time() - float(light_product_time_a))
             light_product_id = light_data["list"][j]["pid"]
-            light_product_detail_url = "https://api.bunjang.co.kr/api/1/product/" + \
-                light_product_id + "/detail_info.json?version=4"
-            light_detail_res = req.get(
-                light_product_detail_url, headers=headers)
-
-            light_detail_soup = BS(light_detail_res.text, "html.parser")
-            light_detail_json_text = light_detail_soup.text
-            light_detail_data = json.loads(light_detail_json_text)
-
-            light_product_category = light_detail_data["item_info"]["category_id"]
-
             light_product_url = f"https://m.bunjang.co.kr/products/{light_product_id}?q=%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B3%B4%EB%93%9C&ref=%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC"
         else:
             continue
 
-        card = {'url': light_product_url, 'title': light_product_title, 'image': light_product_image,  'price': light_product_price,
-                'location': light_product_loca, 'time': light_product_time, 'category': light_product_category}
+        card = {'url': light_product_url, 'image': light_product_image,  'title': light_product_title, 'price': light_product_price,
+                'location': light_product_loca}
         page.append(card)
     d[num] = page
     return
@@ -74,11 +60,9 @@ def light(word):
     sorting_items = sorted(lala.items())
     for k in range(len(sorting_items)):
         element = sorting_items[k][1]
-        items.append(element)
+        items = items + element
     return items
 
-
-print(light("화이트보드"))
 
 # t1 = time.perf_counter()
 # pages = {}

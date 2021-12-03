@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from hello_scrap import hello
 from light_scrap import light
+from daangn_practice import search_daangn
 
 app = Flask("jgCloud")
 
@@ -14,7 +15,7 @@ def main():
 def search():
     word = request.args.get('q')
     print(word)
-    products = hello(word) + light(word)
+    products = search_daangn(word) + hello(word) + light(word)
 
     return render_template("search.html", searchingBy=word, resultsNumber=len(products), word=word, products=products)
 

@@ -38,8 +38,6 @@ def hello(word):
                 hello_product_price = hello_data["list"][j]["item"]["property"]["price"]["amount"]
                 hello_product_loca = hello_data["list"][j]["item"]["property"].get(
                     "location")
-                hello_product_time = hello_data["list"][j]["item"]["timeago"]
-                hello_product_category = hello_data["list"][j]["item"]["categoryId"]
                 hello_product_id = hello_data["list"][j]["item"]["itemIdx"]
                 hello_product_url = "https://www.hellomarket.com/item/" + \
                     str(hello_product_id) + \
@@ -47,8 +45,8 @@ def hello(word):
             else:
                 continue
 
-            card = {'url': hello_product_url, 'title': hello_product_title, 'image': hello_product_image,  'price': hello_product_price,
-                    'location': hello_product_loca, 'time': hello_product_time, 'category': hello_product_category}
+            card = {'url': hello_product_url, 'image': hello_product_image, 'title': hello_product_title, 'price': hello_product_price,
+                    'location': hello_product_loca}
             cards.append(card)
     return cards
 
@@ -83,4 +81,3 @@ def hello(word):
 #             product_title_hello = data_hello["list"][i]["title"]
 #             product_price_hello = data_hello["list"][i]["property"]["price"]["text"]
 #             print(product_image_hello, product_title_hello, product_price_hello)
-print(hello("화이트보드"))
