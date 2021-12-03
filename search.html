@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 탭 title-->
+        <title>중고CLOUD | 모든 중고정보 저장소</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Comparing used products">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="IT Satgat">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!-- CSS-->
+        <style>
+            * {
+                text-align: center;
+            }
+
+            .top_wrap {
+                font-family: 'Gugi', cursive;
+            }
+
+
+            .bottom_wrap {
+                font-weight: bold;
+            }
+
+            .wrap {
+                width: 1200px;
+                margin: auto;
+            }
+
+            .main_title {
+                margin-top: 70px;
+                color: black;
+                font-size: 50px;
+                font-weight: bold;
+                display: inline;
+            }
+
+            .sub_title {
+                font-size: 30px;
+            }
+
+            .search_box {
+                margin-top: 50px;
+            }
+
+            .input_box {
+                width: 500px;
+                height: 45px;
+                font-size: 35px;
+                display: inline;
+            }
+
+            .search_btn {
+                height: 45px;
+                display: inline-block;
+                position: absolute;
+                background-color: transparent;
+                border-color: transparent;
+            }
+
+            .filter_box {
+                margin-bottom: 20px;
+            }
+
+            .filter_box button {
+                background-color: transparent;
+                border-color: transparent;
+                font-size: 20px;
+                padding-inline: 35px;
+            }
+
+            .search_box {
+                margin-bottom: 30px;
+            }
+
+            .choose_filter {
+                margin-top: 30px;
+            }
+
+            .choose_site {
+                margin-bottom: 50px;
+            }
+
+            .card_sector {
+                margin-top: 60px;
+            }
+
+            /* button과 밑에 서치사이트 버튼 속성은 같음. 나중에 같은 것으로 수정요.*/
+            button {
+                transition:all 1s;
+            }
+
+            .choose_site_btn {
+                list-style-position:inside;
+                border: 2px solid transparent;
+                padding : 1px;
+                display: inline;
+                font-size: 20px;
+                padding-inline: 35px;
+                transition:all 1s;
+            }
+
+
+            
+            /*hover 효과*/
+            button:hover{
+                background-color: #90d5ed;
+                opacity: 0.7;
+            }
+
+            .choose_site_btn:hover {
+                background-color: #90d5ed;
+                opacity: 0.7;
+            }
+
+            /*검색할 사이트 클릭시 사이트 목록 나오기*/
+            #check_btn {
+                display: none;
+            }
+            .select_box {
+                display: none;
+            }
+            #check_btn:checked ~ *.select_box {
+                display: block;
+                list-style: none;
+                width:auto;
+                position:relative;
+                margin:30px;
+                padding-left:30px;
+            }
+
+            /* 사이트 선택창 모양 */ 
+            .market_selector {
+                 width: 110px;
+                 font-size: 20px;
+                 margin-left: 20px;
+                 display: inline-block;
+                 border : 2px solid transparent;
+                 text-align: center;
+                 box-shadow: 0px 4px 4px -4px black;
+                 /*box shadow 가로거리 세로거리 흐린,퍼지는 정도, 색상*/
+            }
+
+
+            /**/
+            .market_select_btn {
+                visibility: hidden;
+            }
+
+            /* 사이트 선택 hover */
+            .market_selector {
+                transition:all 1s;
+                position: relative;
+            }
+
+            #jg_li:hover {
+                background-color: #2EFE2E;
+                opacity: 0.7;
+            }
+            #hello_li:hover {
+                background-color: #00BFFF;
+                opacity: 0.7;
+            }
+            #carrot_li:hover {
+                background-color: orange;
+                opacity: 0.7;
+            }
+            #thunder_li:hover {
+                background-color: red;
+                opacity: 0.7;
+            }
+
+            /**/
+            .market_select_btn:checked{
+                visibility: visible;
+            }
+
+            /**/
+            input[type="checkbox"] {
+                display: none;
+            }
+
+
+            input[name="site_name"]:checked + label::after {
+                content:"✔";
+                font-size: 25px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                position: absolute;
+                left: 38px;
+                bottom: 13px;
+            }
+
+            /*화면 너비가 800px 이하가 될 경우 변화*/
+            @media(max-width:800px) {
+                .sub_title {
+                    display: none;
+                }
+            }
+        </style>
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script>
+            // 전체선택
+            function selectAll(selectAll) {
+                const checkboxes
+                    = document.getElementsByName('site_name');
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = selectAll.checked;
+                })
+            }
+
+            // 하나 해제시 전체선택도 해제
+            function checkSelectAll(checkbox) {
+                const selectall
+                    =
+                document.getElementById('all')
+
+                if(checkbox.checked === false) {
+                    selectall.checked = false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- 전체 div -->
+        <div class="wrap">
+            <div class="top_wrap" style="border-bottom:1px solid black; position:fixed; top:0; left:400px; right:400px; z-index:2; background-color: white;">
+            <!-- 검색창 / 버튼 div -->
+            <div class="search_box">
+                <!-- 제목 / 부제목 div -->
+                <h2 class="main_title"><a href="1.html" style="text-decoration-line:none; margin-right: 10px;">중고CLOUD</a></h2>
+                <!-- autofocus:화면 로딩시 커서가 검색창에 우선 배정 -->
+                <input class="input_box" autofocus>
+                <button type="button" class="search_btn"><img style="height: 40px"src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/></button>
+            </div>
+            <!-- 검색필터 div -->
+            <div class="filter_box">
+                <span class="choose_filter">
+                    <input type="checkbox" id="check_btn"/>
+                    <label for="check_btn" type="button" class="choose_site_btn">검색할 사이트</label>
+                    <button type="button" class="cheapest_btn">최저가 검색</button>
+                    <button type="button" class="latest_btn">최신순 검색</button>
+                    <button type="button" class="closest_btn">가까운 거리순 검색</button>
+                    <ul class="select_box">
+                        <li class="market_selector" id="all_li"><input class="market_select_btn" type="checkbox" name="site_name" id="all" onclick="selectAll(this)"/><label id="a" for="all">전체선택</label></li>
+                        <li class="market_selector" id="jg_li"><input class="market_select_btn" type="checkbox" name="site_name" id="jg" onclick="checkSelectAll(this)"/><label id="a" for="jg">중고나라</label></li>
+                        <li class="market_selector" id="hello_li" ><input class="market_select_btn" type="checkbox" name="site_name" id="hello" onclick="checkSelectAll(this)"/><label id="a" for="hello">헬로마켓</label></li>
+                        <li class="market_selector" id="carrot_li" ><input class="market_select_btn" type="checkbox" name="site_name" id="carrot" onclick="checkSelectAll(this)"/><label id="a" for="carrot">당근마켓</label></li>
+                        <li class="market_selector" id="thunder_li" ><input class="market_select_btn" type="checkbox" name="site_name" id="thunder" onclick="checkSelectAll(this)"/><label id="a" for="thunder">번개장터</label></li>
+                    </ul>              
+                </span>          
+            </div>
+            </div>
+        </div>
+            <div class="bottom_wrap" style="padding-top:200px; padding-left: 400px; padding-right: 400px;">
+                <!-- 검색결과 카드 div -->
+            <div class = "card_sector">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
+                        <div class="card"  id="carrot_card" style="width: 250px; height: 420px; margin:0px; display: inline-block;  border-radius:3%; font-weight: bold;">
+                            <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg" alt="carrot_site_logo"></p>
+                            <img src="http://ccimg.hellomarket.com/images/2020/item/07/10/16/0353853_4838666_1.jpg?size=s4" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
+                            <div class="card-body" style="width: 250px; height: 100px;">
+                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">상품 제목</h5>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 가격</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 위치</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 날짜</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 카테고리</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
+                        <div class="card" id="jg_card" style="width: 250px; height: 420px; margin:0px; display: inline-block;  border-radius:3%; font-weight: bold;">
+                            <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="https://img2.joongna.com/common/home/v2/logo/home/front_full.png" alt="carrot_site_logo" style="width: 110px; height:34px; "></p>
+                            <img src="http://ccimg.hellomarket.com/images/2020/item/07/10/16/0353853_4838666_1.jpg?size=s4" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
+                            <div class="card-body" style="width: 250px; height: 100px;">
+                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">상품 제목</h5>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 가격</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 위치</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 날짜</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 카테고리</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
+                        <div class="card" id="hello_card" style="width: 250px; height: 420px; margin:0px; display: inline-block; border-radius:3%; font-weight: bold;">
+                            <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="https://ccimage.hellomarket.com/web/2019/header/img_gnb_logo_x2.png" alt="carrot_site_logo" style="width: 120px; height:34px; "></p>
+                            <img src="http://ccimg.hellomarket.com/images/2020/item/07/10/16/0353853_4838666_1.jpg?size=s4" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
+                            <div class="card-body" style="width: 250px; height: 100px;">
+                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">아이패드 PRO5 미개봉</h5>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">3,000,000원</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">서울 동작구</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">2021년 11월 29일</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">디지털/가전제품</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
+                        <div class="card" id="thunder_card" style="width: 250px; height: 420px; margin:0px; display: inline-block;  border-radius:3%; font-weight: bold;">
+                            <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzYiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAxMzYgNDAiPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBmaWxsPSIjRDgwQzE4Ij4KICAgICAgICAgICAgPHBhdGggZD0iTTIxLjc1MSAxNC44TDUuOTY3IDMxLjc1NmMtLjEwMi4xMS0uMjg2LjAyNS0uMjY3LS4xMjVsMS43Ni0xNC4zNjNILjE1NmMtLjEzNiAwLS4yMDctLjE2Mi0uMTE0LS4yNjJMMTUuODI2LjA1Yy4xMDMtLjExLjI4Ni0uMDI1LjI2OC4xMjVsLTEuNzYgMTQuMzYzaDcuMzAzYy4xMzYgMCAuMjA3LjE2Mi4xMTQuMjYyTTc5LjQgMi41NTVWMjkuNjVoLTQuMDNWMTYuMTMyaC0yLjZ2MTMuMDA0SDY4LjhWMi43MDVoMy45NzF2OS4zMjRoMi42VjIuNTU1aDQuMDN6TTk0LjcgMTguNDU4Yy43NTcgMCAxLjQ5My4wMDUgMi4yMS4wMTUuNzE0LjAxMiAxLjM0NC4wMzYgMS44OS4wNzUgMi4yNTcuMTM4IDQuMDA3LjY1IDUuMjQ2IDEuNTMzIDEuMjQuODgyIDEuODYgMi4yMDcgMS44NiAzLjk3M3MtLjYyIDMuMDg2LTEuODYgMy45NmMtMS4yNC44NzItMi45OSAxLjM4OC01LjI0NyAxLjU0OC0uNTI1LjAzOS0xLjE0NS4wNjMtMS44Ni4wNzMtLjcxNy4wMS0xLjQ1OC4wMTQtMi4yMjMuMDE0LS43NjcgMC0xLjUwOC0uMDA1LTIuMjI0LS4wMTQtLjcxNS0uMDEtMS4zMzUtLjAzNC0xLjg2LS4wNzMtMi4yNTgtLjE2LTQuMDA3LS42NzYtNS4yNDgtMS41NDgtMS4yNC0uODc0LTEuODYtMi4xOTQtMS44Ni0zLjk2cy42Mi0zLjA4NCAxLjg2LTMuOTU4YzEuMjQxLS44NzIgMi45OS0xLjM4OCA1LjI0OC0xLjU0OC41MjUtLjAyIDEuMTQ1LS4wMzkgMS44Ni0uMDYuNzE2LS4wMiAxLjQ1Mi0uMDMgMi4yMDgtLjAzek0xMzMgMi41NTVWMjkuNjVoLTQuMTIzVjE2LjM0M2gtNC4xMjN2LTMuOTIxaDQuMTIzVjIuNTU1SDEzM3ptLTk4LjE1NSAxNy42N3Y1LjE4NWgxNi44NzN2My42NUgzMC41MTN2LTguODM1aDQuMzMyem0zMi4xODctMTcuMDhjLS4yNDQgMi43MjgtLjY1NiA1LjI2OC0xLjIzNyA3LjYxOS0uNTggMi4zNS0xLjI2NyA0LjU0NS0yLjA2MSA2LjU4LS43OTUgMi4wMzktMS42NyAzLjkyNS0yLjYyNyA1LjY2Ny0uOTU4IDEuNzQtMS45MzQgMy4zNjMtMi45MzIgNC44NzFsLTMuNTEyLTIuMTdjLjk1Ni0xLjM2MSAxLjg1My0yLjgwMyAyLjY4OC00LjMxOS44MzQtMS41MTggMS41ODMtMy4wNzkgMi4yNDQtNC42OS42NjEtMS42MDcgMS4yMzItMy4yMzUgMS43MS00Ljg4NS40NzktMS42NDguODQtMy4yNzggMS4wODUtNC44ODZoLTYuOTYzVjMuMTQ0em01Ny4xNjEgMHYzLjczNGgtOS4zNDh2NS44NDFoOC42OTN2My42MTVoLTguNjkzdjcuMDc0bDEyLjI2NS0uNDh2My41NTNsLTE2LjQ5Mi44MTFWMy4xNDRoMTMuNTc1ek05NC43MTUgMjEuOTdjLS42ODYgMC0xLjM1Ni4wMS0yLjAxMi4wMjktLjY1NS4wMjItMS4yMzUuMDUtMS43NC4wOS0xLjAyNy4wOTktMS43NjguMzE3LTIuMjIyLjY1Ni0uNDU0LjMzNi0uNjguNzczLS42OCAxLjMwOCAwIC41MzguMjI2Ljk3My42OCAxLjMxLjQ1NC4zMzcgMS4xOTUuNTU1IDIuMjIyLjY1NC41MDUuMDQxIDEuMDg1LjA3IDEuNzQuMDkuNjU2LjAyIDEuMzI2LjAyOSAyLjAxMi4wMjkuNjg1IDAgMS4zNTUtLjAxIDIuMDExLS4wMjkuNjU1LS4wMiAxLjIzNC0uMDQ5IDEuNzM5LS4wOSAxLjAyOS0uMSAxLjc3LS4zMTcgMi4yMjQtLjY1NC40NTMtLjMzNy42OC0uNzcyLjY4LTEuMzEgMC0uNTM1LS4yMjctLjk3Mi0uNjgtMS4zMDgtLjQ1NC0uMzQtMS4xOTUtLjU1Ny0yLjIyNC0uNjU3LS41MDUtLjAzOC0xLjA4NC0uMDY3LTEuNzM5LS4wOS0uNjU2LS4wMTktMS4zMjYtLjAyOC0yLjAxMS0uMDI4ek01MS43MTggMi41NTV2MTkuNDM3aC00LjI1OXYtOS41OThoLTMuOTU4djUuODEzSDI4Ljc0NlYyLjg1Nmg0LjI1OXY0LjE1aDYuMjM4di00LjE1SDQzLjV2NS42MDNoMy45NThWMi41NTVoNC4yNTl6bTQ2LjYzNC41OXYzLjcyaC00Ljk0NGMtLjM2Ni42ODMtLjc3MyAxLjM4My0xLjIzMSAyLjEwNS0uMDc0LjExOC0uMTYuMjM0LS4yMzUuMzVsNy40ODUgNC44OTgtMi4zNTggMy4yNjItNy4yMzItNS4yMDVjLS4wMzcuMDQ4LS4wNy4wOTYtLjEwNy4xNDMtLjg5NSAxLjEzNy0xLjg0IDIuMjMyLTIuODM0IDMuMjgtLjk5NSAxLjA0Ny0xLjk4IDEuOTY2LTIuOTUzIDIuNzZsLTIuNzc1LTIuODA3Yy43NzYtLjYxMSAxLjU1MS0xLjMwNiAyLjMyNy0yLjA5Ljc3Ni0uNzgyIDEuNTI2LTEuNjA3IDIuMjUyLTIuNDcuNzI2LS44NjQgMS40MDItMS43NTggMi4wMy0yLjY4NC4zNDgtLjUxNi42NjUtMS4wMy45Ni0xLjU0Mkg4Mi42di0zLjcyaDE1Ljc1MnptNi40MTgtLjU5VjguMWgyLjkwM3YzLjk2aC0yLjkwM3Y2LjRoLTQuMTY1VjIuNTU0aDQuMTY1em0tNjUuNTI3IDguMDIzaC02LjIzOHYzLjk5N2g2LjIzOHYtMy45OTd6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNC4wMDAwMDApIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K" alt="carrot_site_logo" style="width: 120px; height:34px; "></p>
+                            <img src="http://ccimg.hellomarket.com/images/2020/item/07/10/16/0353853_4838666_1.jpg?size=s4" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
+                            <div class="card-body" style="width: 250px; height: 100px;">
+                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">상품 제목</h5>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 가격</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 위치</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 날짜</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 카테고리</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
+
