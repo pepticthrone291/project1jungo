@@ -43,11 +43,7 @@
                 color: black;
                 font-size: 50px;
                 font-weight: bold;
-                display: inline;
-            }
-
-            .sub_title {
-                font-size: 30px;
+                display: inline-flex;
             }
 
             .search_box {
@@ -58,7 +54,7 @@
                 width: 500px;
                 height: 45px;
                 font-size: 35px;
-                display: inline;
+                display: inline-flex;
             }
 
             .search_btn {
@@ -203,11 +199,33 @@
                 bottom: 13px;
             }
 
-            /*화면 너비가 800px 이하가 될 경우 변화*/
-            @media(max-width:800px) {
-                .sub_title {
-                    display: none;
+            /*화면 너비가 768px 이하가 될 경우 변화*/
+
+            @media(max-width:768px) {
+                .main_title {
+                    position:absolute; top:0; left:0;
+                    margin-left: 30px;
+                    display: inline-flex;
                 }
+                .input_box {
+                    position: absolute; left:25%;
+                    margin-top: 2%;
+                    width: 380px;
+                    height: 45px;
+                    font-size: 35px;
+                    display: inline-flex;
+                }
+                .search_btn {
+                    position: absolute; left:57%;
+                    margin-top: 2%;
+                    display: inline-block;
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+                .top_wrap {
+                    font-family: 'Gugi', cursive;
+                }
+
             }
         </style>
 
@@ -244,14 +262,14 @@
     <body>
         <!-- 전체 div -->
         <div class="wrap">
-            <div class="top_wrap" style="border-bottom:1px solid black; position:fixed; top:0; left:400px; right:400px; z-index:2; background-color: white;">
+            <div class="top_wrap" style="border-bottom:1px solid black; width:1200px; position:fixed; top:0; z-index:2; background-color: white;">
             <!-- 검색창 / 버튼 div -->
             <div class="search_box">
                 <!-- 제목 / 부제목 div -->
                 <h2 class="main_title"><a href="1.html" style="text-decoration-line:none; margin-right: 10px;">중고CLOUD</a></h2>
                 <!-- autofocus:화면 로딩시 커서가 검색창에 우선 배정 -->
                 <input class="input_box" autofocus>
-                <button type="button" class="search_btn"><img style="height: 40px"src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/></button>
+                <button type="button" class="search_btn"><img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/></button>
             </div>
             <!-- 검색필터 div -->
             <div class="filter_box">
@@ -272,22 +290,24 @@
             </div>
             </div>
         </div>
-            <div class="bottom_wrap" style="padding-top:200px; padding-left: 400px; padding-right: 400px;">
+            <div class="bottom_wrap" style="padding-top:280px; margin-left: 20%; margin-right: 20%;">
                 <!-- 검색결과 카드 div -->
             <div class = "card_sector">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, auto)); row-gap: 30px; column-gap: 50px;">
                     <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
+                        {% for dg in dgs %}
                         <div class="card"  id="carrot_card" style="width: 250px; height: 420px; margin:0px; display: inline-block;  border-radius:3%; font-weight: bold;">
                             <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg" alt="carrot_site_logo"></p>
-                            <img src="http://ccimg.hellomarket.com/images/2020/item/07/10/16/0353853_4838666_1.jpg?size=s4" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
+                            <img src="{{dg.image}}" class="card-img-top" alt="img1" style="width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
                             <div class="card-body" style="width: 250px; height: 100px;">
-                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">상품 제목</h5>
-                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 가격</p>
-                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 위치</p>
-                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 날짜</p>
-                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">중고 상품 카테고리</p>
+                                <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">{{dg.title}}</h5>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{dg.price}}</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{dg.location}}</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{dg.title}}</p>
+                                <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{dg.title}}</p>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                     <div class="col" style="width: 100px; height: 420px; margin:0px; padding:0px; display: inline-block;">
                         <div class="card" id="jg_card" style="width: 250px; height: 420px; margin:0px; display: inline-block;  border-radius:3%; font-weight: bold;">
