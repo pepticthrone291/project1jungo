@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from threading import Thread
-import time
 
 daangn_result = 0
 
@@ -34,17 +33,15 @@ def extract(d, word, num):
     return
 
 
-def search_daangn(word):
-    k = 0
+def db_daangn(word):
     pages = {}
     threads = []
-    while True:
+    for k in range(50):
         if daangn_result == 1:
             break
         t = Thread(target=extract, args=(pages, word, k+1))
         t.start()
         threads.append(t)
-        k += 1
     for thread in threads:
         thread.join()
     srtd = sorted(pages.items())

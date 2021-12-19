@@ -1,0 +1,56 @@
+검색어 구상
+
+검색어로 모든 상품을 분류할 수 있는가
+
+카테고리가 가장 큰 분류 예 : 의류, 전자제품, 서적, 가방, 구두, 유아, 아동용품, 컴퓨터 및 주변기기, 생활용품
+
+그 다음은 제품별 분류 ? 의류 어떻게 분류??
+
+
+자동 포스팅
+
+작성 시간
+
+크롤링
+
+셀레니움
+
+test 1
+중고나라, 당근마켓, 헬로마켓, 번개장터에서 각각 50page의 데이터 추출
+검색어 원피스
+추출한 데이터를 mySQL로 생성한 데이터베이스에 저장
+검색어를 페이지에 입력시 데이터베이스에 저장되어 있던 결과를 표시
+결과에 귀속된 다른 검색어를 입력해도 해당 결과를 표시
+1분 간격으로 데이터를 추출 후 현 데이터베이스와 비교하여 최신화
+
+일단 크롤링 방식은 thread나 multiprocessor를 사용하지 않고 하도록 하고 위 방식이 오류없이 작동했을 경우 제한된 수의 thread를 활용하여 속도를 높이는 방안을 모색한다.
+
+database table 구성 
+
+기본적인 항목 : url, image, title, price, location
+
+열에 들어가야 할 항목이 다섯개라는 뜻임..
+가격은 겹치는 부분을 굳이 refactoring 할 필요가 없고, location 도 마찬가지 (나중에 필요할 때 해 놓으면 될 듯)
+결국 모두 각개 데이터로 구성하면 됨 다만 열을 추가할 게 하나가 더 있는데 그것은 바로 어느 마켓에 구성된 데이터인지 결국
+market, url, image, title, titleSearch, price, location 이런 식으로 구성될 듯
+
+title을 database에 저장할 때 공백을 없애고, 소문자화 시켜서 저장함 title_search 라는 항목으로 저장해놓음 => replace, lower 이용
+price는 애초에 list로 저장을 할 때에 단위나 코마를 제거함 integer로 변경하여 저장
+
+CREATE TABLE products(
+id INT(11) NOT NULL AUTO_INCREMENT,
+market VARCHAR(32) NOT NULL,
+url VARCHAR(512) NOT NULL,
+image VARCHAR(512) NOT NULL,
+title VARCHAR(128) NOT NULL,
+title_search VARCHAR(128) NOT NULL,
+price INT(11) NULL,
+location VARCHAR(32) NULL,
+PRIMARY KEY(id));
+
+알고리즘
+
+루프에서 크롤링한 데이터를 디비에서 검색
+존재하는 데이터일 경우, (제목이 완전히 동일할 것이다) 디비에 저장하지 않음
+존재하지 않는 데이터일 경우, 인서트를 활용하여 기존 테이블에 추가
+

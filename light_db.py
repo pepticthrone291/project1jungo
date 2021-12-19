@@ -1,10 +1,6 @@
 import requests as req
 from bs4 import BeautifulSoup as BS
-# import concurrent.futures
-# from threading import Thread
 import json
-import datetime
-import time
 from threading import Thread
 
 light_result = 0
@@ -43,7 +39,7 @@ def light_page(d, word, num):
     return
 
 
-def light(word):
+def db_light(word):
     j = 0
     lala = {}
     threads = []
@@ -62,51 +58,3 @@ def light(word):
         element = sorting_items[k][1]
         items = items + element
     return items
-
-
-# t1 = time.perf_counter()
-# pages = {}
-# for i in range(3):
-#     light_page(pages, "화이트보드", i)
-# print(pages)
-# t2 = time.perf_counter()
-# print(f'Finished in {round(t2-t1, 2)} second(s)')
-
-
-# t3 = time.perf_counter()
-# print(light("화이트보드"))
-# t4 = time.perf_counter()
-# print(f'Finished in {round(t4-t3, 2)} second(s)')
-
-# t1 = time.perf_counter()
-
-# with concurrent.futures.ThreadPoolExecutor() as executor:
-#     pages = [0, 1, 2, 3, 4]
-#     # results = [executor.submit(light_scrap, page) for page in pages]
-#     # for f in concurrent.futures.as_completed(results):
-#     #     print(f.result())
-#     results = executor.map(light_scrap, pages)
-
-# t2 = time.perf_counter()
-
-# print(f'Finished in {round(t2-t1, 2)} second(s)')
-
-
-# t1 = time.perf_counter()
-
-# threads = []
-# k = 0
-
-# while 1:
-#     if light_result == 1:
-#         break
-#     t = Thread(target=light_scrap, args=[k])
-#     t.start()
-#     threads.append(t)
-#     k += 1
-
-# for thread in threads:
-#     thread.join()
-
-# t2 = time.perf_counter()
-# print(t2 - t1)

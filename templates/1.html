@@ -28,26 +28,23 @@
     <style>
       * {
         text-align: center;
-        font-weight: bold;
+        font-family: "Gugi", cursive;
       }
 
       .wrap {
-        width: 1200px;
+        width: 900px;
         margin: auto;
       }
 
       .main_title {
-        user-select: none;
-        font-family: "Gugi", cursive;
         margin-top: 70px;
         color: black;
         font-size: 110px;
         font-weight: bold;
+        /* font-style: None; */
       }
 
       .sub_title {
-        user-select: none;
-        font-family: "Gugi", cursive;
         font-size: 30px;
       }
 
@@ -98,12 +95,10 @@
 
       /* button과 밑에 서치사이트 버튼 속성은 같음. 나중에 같은 것으로 수정요.*/
       button {
-        user-select: none;
         transition: all 1s;
       }
 
       .choose_site_btn {
-        user-select: none;
         list-style-position: inside;
         border: 2px solid transparent;
         padding: 1px;
@@ -142,7 +137,6 @@
 
       /* 사이트 선택창 모양 */
       .market_selector {
-        user-select: none;
         width: 110px;
         font-size: 20px;
         margin-left: 20px;
@@ -274,19 +268,49 @@
           <button type="button" class="closest_btn">가까운 거리순 검색</button>
           <ul class="select_box">
             <li class="market_selector" id="all_li">
-              <input class="market_select_btn" type="checkbox" name="site_name" id="all" onclick="selectAll(this)"/><label id="1" for="all">전체선택</label>
+              <input
+                class="market_select_btn"
+                type="checkbox"
+                name="site_name"
+                id="all"
+                onclick="selectAll(this)"
+              /><label id="1" for="all">전체선택</label>
             </li>
             <li class="market_selector" id="jg_li">
-              <input class="market_select_btn" type="checkbox" name="site_name" id="jg" onclick="checkSelectAll(this)"/><label id="2" for="jg">중고나라</label>
+              <input
+                class="market_select_btn"
+                type="checkbox"
+                name="site_name"
+                id="jg"
+                onclick="checkSelectAll(this)"
+              /><label id="2" for="jg">중고나라</label>
             </li>
             <li class="market_selector" id="hello_li">
-              <input class="market_select_btn" type="checkbox" name="site_name" id="hello" onclick="checkSelectAll(this)"/><label id="3" for="hello">헬로마켓</label>
+              <input
+                class="market_select_btn"
+                type="checkbox"
+                name="site_name"
+                id="hello"
+                onclick="checkSelectAll(this)"
+              /><label id="3" for="hello">헬로마켓</label>
             </li>
             <li class="market_selector" id="carrot_li">
-              <input class="market_select_btn" type="checkbox" name="site_name" id="carrot" onclick="checkSelectAll(this)"/><label id="4" for="carrot">당근마켓</label>
+              <input
+                class="market_select_btn"
+                type="checkbox"
+                name="site_name"
+                id="carrot"
+                onclick="checkSelectAll(this)"
+              /><label id="4" for="carrot">당근마켓</label>
             </li>
             <li class="market_selector" id="thunder_li">
-              <input class="market_select_btn" type="checkbox" name="site_name" id="thunder" onclick="checkSelectAll(this)"/><label id="5" for="thunder">번개장터</label>
+              <input
+                class="market_select_btn"
+                type="checkbox"
+                name="site_name"
+                id="thunder"
+                onclick="checkSelectAll(this)"
+              /><label id="5" for="thunder">번개장터</label>
             </li>
           </ul>
         </div>
@@ -295,22 +319,10 @@
 
       <!-- 검색결과 카드 div -->
       <div class="card_sector">
-          <div class="card_grid" style="display: grid; grid-template-columns: repeat(auto-fill,minmax(235px,auto)); row-gap: 1%; column-gap: 1%; margin-right: 5%; margin-left: 5%;">
-            <div class="card_wrap">
-              {% for tm in items %}
-              <div class="card" id="carrot_card" style="width:235px; height:420px;" a href="{{tm[2]}}">
-                  <p class="site_title" style="text-align: left; margin-bottom:0px; margin-left: 10px; margin-top: 5px;"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg" alt="carrot_site_logo" style="width: 120px; height:34px; "></p>
-                  <img src="{{tm[3]}}" class="card-img-top" alt="img1" style="margin:auto; width: 200px; height: 200px; margin-top:5px; display: inline; align-items: center;">
-                  <div class="card-body" style="width: 235px; height: 100px;">
-                      <h5 class="card-title" style="text-align: right; margin-bottom: 5px;">{{tm[4]}}</h5>
-                      <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{tm[6]}}</p>
-                      <p class="card-text" style="text-align: right; margin-bottom: 5px;">{{tm[7]}}</p>
-                  </div>
-              </div>
-              {% endfor %}
-            </div>      
-          </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">           
+        </div>
+      </div>
     </div>
   </body>
 </html>
- 

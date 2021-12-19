@@ -19,7 +19,7 @@ def extract_page(word):
     return max_page
 
 
-def hello(word):
+def db_hello(word):
     turtle = str(time.time()).replace('.', '').strip()[0:13]
     cards = []
     for i in range(extract_page(word)):
@@ -49,35 +49,3 @@ def hello(word):
                     'location': hello_product_loca}
             cards.append(card)
     return cards
-
-# threads = []
-# j = 0
-
-# while 1:
-#     j += 1
-#     if hello_result == 1:
-#         break
-#     t = Thread(target=hello_scrap, args=[j])
-#     t.start()
-#     threads.append(t)
-
-# for thread in threads:
-#     thread.join()
-
-# t2 = time.perf_counter()
-# print(t2 - t1)
-# print(len(data_hello["list"]))
-
-# product_title_hello = data_hello["list"][0]["item"]["title"]
-# print(product_title_hello)
-
-
-#     if len(data_hello) <= 1:
-#         global result
-#         result = 0
-#     else:
-#         for i in len(data_hello):
-#             product_image_hello = data_hello["list"][i]["item"]["media"]["imageUrl"]
-#             product_title_hello = data_hello["list"][i]["title"]
-#             product_price_hello = data_hello["list"][i]["property"]["price"]["text"]
-#             print(product_image_hello, product_title_hello, product_price_hello)

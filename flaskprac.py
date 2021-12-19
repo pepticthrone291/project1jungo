@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from carrot_scrap import carrot_scrap
-from hello_scrap import hello_scrap
-from light_scrap import light_scrap
+from hello_search import hello_scrap
+from light_db import light_scrap
 
 app = Flask("JGscrp")
 
